@@ -180,6 +180,9 @@ PICK = ('pickleball-court.jpg', 'Indoor pickleball court', AMENITIES)
 F1 = ('friends-campus.jpg', 'Friends walking through campus', SITE)
 F2 = ('friends-pickleball.jpg', 'Three friends with a pickleball paddle', SITE)
 F3 = ('friends-selfie.jpg', 'Two friends taking a selfie', SITE)
+G1 = ('friends-gameday-selfie.jpg', 'Friends in garnet and gold taking a group selfie', SITE)
+G2 = ('friends-coffee.jpg', 'Two friends with iced coffees outside a coffee shop', SITE)
+G3 = ('poolside.jpg', 'Smiling by the pool in sunglasses', AMENITIES)
 
 EMAILS = {
     'still-interested.html': dict(
@@ -191,7 +194,7 @@ EMAILS = {
         photos_top=(POOL, LIV, PICK),
         teal='Spots are starting to fill, and it would make us (and you, we&rsquo;re sure) super sad if you '
              'missed out on the floor plan of your dreams.',
-        photos_bottom=(F1, F2, F3),
+        photos_bottom=(G1, G2, G3),
         pink='Give us a call or send us a message...we&rsquo;re around every day from 10-5. Heck, you can even '
              'reply to this email with a simple &ldquo;tell me more.&rdquo;',
         closing='We&rsquo;re here to help!',

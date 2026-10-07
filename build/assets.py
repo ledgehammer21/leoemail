@@ -46,3 +46,8 @@ def leaf(src, name, w, h, cx=0.5, cy=0.5, r=70):
 leaf('H__POOL1.jpg', 'rooftop-pool.jpg', 800, 432, 0.5, 0.62)
 leaf('Sanibel_PH__Living_Room.jpg', 'living-room.jpg', 378, 432, 0.45, 0.6)
 leaf('C__PICKLE_BALL_COURT.jpg', 'pickleball-court.jpg', 378, 432, 0.62, 0.6)
+
+# Still Interested lifestyle set (client-supplied photos)
+leaf('59e5ef8c-image.jpg', 'friends-gameday-selfie.jpg', 800, 432, 0.5, 0.47)
+leaf('d82d6a3f-image.jpg', 'friends-coffee.jpg', 378, 432, 0.5, 0.5515)
+leaf('dc506566-image.jpg', 'poolside.jpg', 378, 432, 0.5, 0.45)
