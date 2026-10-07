@@ -60,7 +60,7 @@ def tour_action():
     <td class="px" style="padding:0 40px 14px 40px;background-color:#ffffff;" bgcolor="#ffffff">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          {slot_card('Today', '0:00 PM', 'No time better than the present!', reply('Tour today at 0:00 PM', 'Hi Leo Tally Team, put me down for a tour today at 0:00 PM!'), PINK, CHAR, CHAR, CHAR, '#ffffff')}
+          {slot_card('Today', '0:00 PM', 'No time better than the present!', reply('Tour today at 0:00 PM', 'Hi Leo Tally Team, put me down for a tour today at 0:00 PM!'), PINK, CHAR, CHAR, '#ffffff', CHAR)}
           {GAP}
           {slot_card('Tomorrow', '0:00 AM', 'Sleep on it, then come see it.', reply('Tour tomorrow at 0:00 AM', 'Hi Leo Tally Team, put me down for a tour tomorrow at 0:00 AM!'), TEAL, '#ffffff', '#d6e3e6', '#ffffff', TEAL)}
         </tr>
