@@ -141,7 +141,6 @@ def build(e):
     .stack {{ display:block !important; width:auto !important; }}
     .stack-gap {{ display:block !important; width:100% !important; height:14px !important; line-height:14px !important; }}
     .h1 {{ font-size:32px !important; line-height:36px !important; }}
-    .leo {{ font-size:44px !important; line-height:46px !important; }}
     .nav a {{ padding:0 8px !important; }}
   }}
 </style>
@@ -194,16 +193,10 @@ def build(e):
     </td>
   </tr>
 
-  <!-- L.E.O. BAND -->
-  <tr>
-    <td class="px" background="{IMG}pattern-teal.png" bgcolor="#44717c" style="padding:56px 40px 60px 40px;background-color:#44717c;background-image:url('{IMG}pattern-teal.png');background-repeat:repeat;background-position:top left;background-size:100px 100px;">
-      <p class="leo" style="margin:0;font-family:{SERIF};font-size:58px;line-height:58px;font-weight:400;color:#ffffff;"><span style="color:#f8b5b3;">L</span>iterally<br><span style="color:#f8b5b3;">E</span>veryone&rsquo;s<br><span style="color:#f8b5b3;">O</span>bsessed</p>
-    </td>
-  </tr>
-
   <!-- FOOTER -->
   <tr>
-    <td class="px" align="center" bgcolor="{CHAR}" style="padding:40px 30px 40px 30px;background-color:{CHAR};">
+    <td class="px" align="center" bgcolor="{CHAR}" style="padding:48px 30px 42px 30px;background-color:{CHAR};">
+      <p style="margin:0 0 26px 0;font-family:{SERIF};font-size:26px;line-height:32px;font-weight:400;color:#ffffff;"><span style="color:#f8b5b3;">L</span>iterally <span style="color:#f8b5b3;">E</span>veryone&rsquo;s <span style="color:#f8b5b3;">O</span>bsessed</p>
       <p class="nav" style="margin:0 0 24px 0;font-family:{FOOT_SANS};font-size:11px;line-height:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ffffff;">
         <a href="{FLOOR_PLANS}" target="_blank" style="color:#ffffff;text-decoration:underline;padding:0 12px;white-space:nowrap;">Floor Plans</a>
         <a href="{AMENITIES}" target="_blank" style="color:#ffffff;text-decoration:underline;padding:0 12px;white-space:nowrap;">Amenities</a>
