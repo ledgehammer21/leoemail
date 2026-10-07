@@ -44,8 +44,8 @@ def slot_card(day, time, note, href, bg, fg, sub, btn_bg, btn_fg):
             <a href="{href}" style="display:block;padding:26px 24px 24px 24px;text-decoration:none;color:{fg};">
               <span style="display:block;font-family:{SANS};font-size:11px;line-height:16px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:{sub};">{day}</span>
               <span style="display:block;padding:6px 0 8px 0;font-family:{SERIF};font-size:42px;line-height:46px;font-weight:400;color:{fg};white-space:nowrap;">{time}</span>
-              <span style="display:block;font-family:{SANS};font-size:15px;line-height:21px;font-weight:300;color:{fg};">{note}</span>
-              <span style="display:inline-block;margin-top:18px;padding:10px 18px;{LEAF_SM}background-color:{btn_bg};font-family:{SANS};font-size:15px;line-height:21px;font-weight:500;color:{btn_fg};text-decoration:none;white-space:nowrap;">Book this one &rarr;</span>
+              <span style="display:block;height:42px;font-family:{SANS};font-size:15px;line-height:21px;font-weight:300;color:{fg};">{note}</span>
+              <span style="display:block;margin-top:18px;padding:10px 18px;text-align:center;{LEAF_SM}background-color:{btn_bg};font-family:{SANS};font-size:15px;line-height:21px;font-weight:500;color:{btn_fg};text-decoration:none;white-space:nowrap;">Book this one &rarr;</span>
             </a>
           </td>'''
 
