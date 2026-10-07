@@ -78,7 +78,7 @@ def still_action():
     return f'''
   <!-- ACTION: urgency card with a one-tap reply -->
   <tr>
-    <td class="px" style="padding:0 40px 0 40px;background-color:#ffffff;" bgcolor="#ffffff">
+    <td class="px" style="padding:0 40px 30px 40px;background-color:#ffffff;" bgcolor="#ffffff">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td class="card" background="{IMG}pattern-pink.png" bgcolor="#f39694" style="padding:34px 32px 34px 32px;background-color:#f39694;background-image:url('{IMG}pattern-pink.png');background-repeat:repeat;background-size:100px 100px;{LEAF}">
@@ -95,9 +95,14 @@ def still_action():
         </tr>
       </table>
     </td>
-  </tr>
+  </tr>'''
+
+
+def still_contact():
+    return f'''
+  <!-- CONTACT -->
   <tr>
-    <td class="px" style="padding:30px 40px 44px 40px;background-color:#ffffff;" bgcolor="#ffffff">
+    <td class="px" style="padding:34px 40px 0 40px;background-color:#ffffff;" bgcolor="#ffffff">
       <p style="margin:0 0 20px 0;font-family:{SANS};font-size:16px;line-height:24px;font-weight:300;color:{TEAL};">Give us a call or send us a message...we&rsquo;re around every day from 10-5. Heck, you can even reply to this email with a simple &ldquo;tell me more.&rdquo;</p>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
@@ -184,7 +189,7 @@ def build(e):
       </table>
     </td>
   </tr>
-
+{e.get('after', '')}
   <!-- SIGN-OFF -->
   <tr>
     <td class="px" style="padding:38px 40px 48px 40px;background-color:#ffffff;" bgcolor="#ffffff">
@@ -242,6 +247,7 @@ EMAILS = {
         intro='We&rsquo;d love to chat and help you see why Literally Everyone&rsquo;s Obsessed with Leo. We&rsquo;re happy to '
               'answer any questions about floor plans, availability, or the leasing process!',
         action=still_action(),
+        after=still_contact(),
         tall=('v3-still-tall.jpg', 'Two friends with iced coffees outside a coffee shop', SITE),
         pair=('v3-still-stack.jpg', 'Rooftop pool with a Jumbotron, and a resident smiling poolside', AMENITIES),
         closing='We&rsquo;re here to help!',
