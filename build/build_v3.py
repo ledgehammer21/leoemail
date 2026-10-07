@@ -235,6 +235,7 @@ EMAILS = {
         headline='Let&rsquo;s get a tour of Leo Tallahassee on your calendar!',
         intro='We have two tour openings. Tap the time that works best, hit send, and we&rsquo;ll get you on the calendar!',
         action=tour_action(),
+        header='header-short.jpg', header_h=180,
         tall=('v3-tour-tall.jpg', 'Rooftop pool and sun deck from above', AMENITIES),
         pair=('v3-tour-stack.jpg', 'The Leo Tallahassee leasing entrance, and friends taking a gameday selfie', CONTACT),
         closing='We can&rsquo;t wait to meet you and show you what living lavishly at Leo looks like.',
