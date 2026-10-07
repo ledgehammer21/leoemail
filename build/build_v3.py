@@ -28,7 +28,7 @@ def reply(subject, body):
 
 
 def eyebrow(text, color):
-    return (f'<p style="margin:0 0 10px 0;font-family:{SANS};font-size:12px;line-height:16px;font-weight:500;'
+    return (f'<p style="margin:0 0 10px 0;font-family:{SANS};font-size:14px;line-height:18px;font-weight:500;'
             f'letter-spacing:2.5px;text-transform:uppercase;color:{color};">{text}</p>')
 
 
@@ -39,13 +39,13 @@ def button(label, href, bg, fg, border=None):
             f'font-weight:500;color:{fg};text-decoration:none;white-space:nowrap;">{label}</a></td>')
 
 
-def slot_card(day, time, note, href, bg, fg, sub):
+def slot_card(day, time, note, href, bg, fg, sub, btn_bg, btn_fg):
     return f'''<td class="stack" width="47.9%" valign="top" bgcolor="{bg}" style="background-color:{bg};{LEAF}">
             <a href="{href}" style="display:block;padding:26px 24px 24px 24px;text-decoration:none;color:{fg};">
               <span style="display:block;font-family:{SANS};font-size:11px;line-height:16px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:{sub};">{day}</span>
               <span style="display:block;padding:6px 0 8px 0;font-family:{SERIF};font-size:42px;line-height:46px;font-weight:400;color:{fg};white-space:nowrap;">{time}</span>
               <span style="display:block;font-family:{SANS};font-size:15px;line-height:21px;font-weight:300;color:{fg};">{note}</span>
-              <span style="display:block;padding-top:18px;font-family:{SANS};font-size:15px;line-height:21px;font-weight:500;color:{fg};text-decoration:underline;">Book this one &rarr;</span>
+              <span style="display:inline-block;margin-top:18px;padding:10px 18px;{LEAF_SM}background-color:{btn_bg};font-family:{SANS};font-size:15px;line-height:21px;font-weight:500;color:{btn_fg};text-decoration:none;white-space:nowrap;">Book this one &rarr;</span>
             </a>
           </td>'''
 
@@ -60,16 +60,22 @@ def tour_action():
     <td class="px" style="padding:0 40px 14px 40px;background-color:#ffffff;" bgcolor="#ffffff">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          {slot_card('Today', '0:00 PM', 'No time better than the present!', reply('Tour today at 0:00 PM', 'Hi Leo Tally Team, put me down for a tour today at 0:00 PM!'), PINK, CHAR, CHAR)}
+          {slot_card('Today', '0:00 PM', 'No time better than the present!', reply('Tour today at 0:00 PM', 'Hi Leo Tally Team, put me down for a tour today at 0:00 PM!'), PINK, CHAR, CHAR, CHAR, '#ffffff')}
           {GAP}
-          {slot_card('Tomorrow', '0:00 AM', 'Sleep on it, then come see it.', reply('Tour tomorrow at 0:00 AM', 'Hi Leo Tally Team, put me down for a tour tomorrow at 0:00 AM!'), TEAL, '#ffffff', '#d6e3e6')}
+          {slot_card('Tomorrow', '0:00 AM', 'Sleep on it, then come see it.', reply('Tour tomorrow at 0:00 AM', 'Hi Leo Tally Team, put me down for a tour tomorrow at 0:00 AM!'), TEAL, '#ffffff', '#d6e3e6', '#ffffff', TEAL)}
         </tr>
       </table>
     </td>
   </tr>
   <tr>
-    <td class="px" style="padding:10px 40px 44px 40px;background-color:#ffffff;" bgcolor="#ffffff">
-      <p style="margin:0;font-family:{SANS};font-size:16px;line-height:24px;font-weight:300;color:{TEAL};">If neither works, just text us at <a href="{SMS}" style="color:{TEAL};font-weight:500;text-decoration:underline;white-space:nowrap;">(850) 220-5585</a> and we&rsquo;ll find a time that does.</p>
+    <td class="px" style="padding:0 40px 44px 40px;background-color:#ffffff;" bgcolor="#ffffff">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td align="center" bgcolor="#ffffff" style="background-color:#ffffff;border:1px solid {TEAL};{LEAF_SM}">
+            <a href="{SMS}" style="display:block;padding:12px 10px;font-family:{SANS};font-size:16px;line-height:24px;font-weight:500;color:{TEAL};text-decoration:none;">Neither works? Text us a time &rarr;</a>
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>'''
 
@@ -82,11 +88,11 @@ def still_action():
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <td class="card" background="{IMG}pattern-pink.png" bgcolor="#f39694" style="padding:34px 32px 34px 32px;background-color:#f39694;background-image:url('{IMG}pattern-pink.png');background-repeat:repeat;background-size:100px 100px;{LEAF}">
-            <p style="margin:0 0 10px 0;font-family:{SERIF};font-size:32px;line-height:36px;font-weight:400;color:{CHAR};">Spots are starting to&nbsp;fill,</p>
+            <p style="margin:0 0 10px 0;font-family:{SERIF};font-size:24px;line-height:30px;font-weight:400;color:{CHAR};">Spots are starting to&nbsp;fill,</p>
             <p style="margin:0 0 24px 0;font-family:{SANS};font-size:17px;line-height:25px;font-weight:400;color:{CHAR};">and it would make us (and you, we&rsquo;re sure) super sad if you missed out on the floor plan of your dreams.</p>
             <table role="presentation" cellpadding="0" cellspacing="0" border="0">
               <tr>
-                <td align="center" bgcolor="{CHAR}" style="background-color:{CHAR};{LEAF_SM}">
+                <td align="center" bgcolor="{TEAL}" style="background-color:{TEAL};{LEAF_SM}">
                   <a href="{reply('Tell me more', 'Tell me more!')}" style="display:block;padding:13px 30px;font-family:{SANS};font-size:17px;line-height:24px;font-weight:500;color:#ffffff;text-decoration:none;white-space:nowrap;">Tell me more &rarr;</a>
                 </td>
               </tr>
@@ -103,12 +109,12 @@ def still_contact():
   <!-- CONTACT -->
   <tr>
     <td class="px" style="padding:34px 40px 0 40px;background-color:#ffffff;" bgcolor="#ffffff">
-      <p style="margin:0 0 20px 0;font-family:{SANS};font-size:16px;line-height:24px;font-weight:300;color:{TEAL};">Give us a call or send us a message...we&rsquo;re around every day from 10-5. Heck, you can even reply to this email with a simple &ldquo;tell me more.&rdquo;</p>
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+      <p style="margin:0 0 18px 0;font-family:{SANS};font-size:16px;line-height:24px;font-weight:300;color:{TEAL};">We&rsquo;re around every day from 10-5 if you&rsquo;d rather call or text.</p>
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          {button('Call (850) 220-5585', TEL, TEAL, '#ffffff')}
-          {GAP}
-          {button('Send a Message', CONTACT, '#ffffff', TEAL, TEAL)}
+          <td align="center" bgcolor="#ffffff" style="background-color:#ffffff;border:1px solid {TEAL};{LEAF_SM}">
+            <a href="{TEL}" style="display:block;padding:12px 28px;font-family:{SANS};font-size:16px;line-height:24px;font-weight:500;color:{TEAL};text-decoration:none;white-space:nowrap;">Call or text (850) 220-5585</a>
+          </td>
         </tr>
       </table>
     </td>
@@ -184,7 +190,11 @@ def build(e):
         <tr>
           <td width="47.9%" valign="top" style="font-size:0;line-height:0;"><a href="{e['tall'][2]}" target="_blank"><img src="{IMG}{e['tall'][0]}" width="249" height="330" alt="{e['tall'][1]}" style="display:block;width:100%;max-width:249px;height:auto;border:0;"></a></td>
           <td width="4.2%" style="font-size:0;line-height:0;">&nbsp;</td>
-          <td width="47.9%" valign="top" style="font-size:0;line-height:0;"><a href="{e['pair'][2]}" target="_blank"><img src="{IMG}{e['pair'][0]}" width="249" height="330" alt="{e['pair'][1]}" style="display:block;width:100%;max-width:249px;height:auto;border:0;"></a></td>
+          <td width="47.9%" valign="top" style="font-size:0;line-height:0;">
+            <a href="{e['top'][2]}" target="_blank"><img src="{IMG}{e['top'][0]}" width="249" height="154" alt="{e['top'][1]}" style="display:block;width:100%;max-width:249px;height:auto;border:0;"></a>
+            <div style="height:22px;line-height:22px;font-size:0;">&nbsp;</div>
+            <a href="{e['bottom'][2]}" target="_blank"><img src="{IMG}{e['bottom'][0]}" width="249" height="154" alt="{e['bottom'][1]}" style="display:block;width:100%;max-width:249px;height:auto;border:0;"></a>
+          </td>
         </tr>
       </table>
     </td>
@@ -193,7 +203,7 @@ def build(e):
   <!-- SIGN-OFF -->
   <tr>
     <td class="px" style="padding:38px 40px 48px 40px;background-color:#ffffff;" bgcolor="#ffffff">
-      <h2 style="margin:0 0 20px 0;font-family:{SERIF};font-size:27px;line-height:34px;font-weight:400;color:{TEAL};">{e['closing']}</h2>
+{e['closing']}
       <p style="margin:0;font-family:{SANS};font-size:17px;line-height:25px;font-weight:300;color:{TEAL};">{e['signoff']}<br>Leo Tally Team</p>
     </td>
   </tr>
@@ -232,13 +242,14 @@ EMAILS = {
     'v3-see-you-tomorrow.html': dict(
         subject='Link Up at Leo?',
         preheader='Two tour openings, one tap to book. Pick the time that works best.',
-        headline='Let&rsquo;s get a tour of Leo Tallahassee on your calendar!',
+        headline='Let&rsquo;s get your Leo tour on the calendar!',
         intro='We have two tour openings. Tap the time that works best, hit send, and we&rsquo;ll get you on the calendar!',
         action=tour_action(),
         header='header-short.jpg', header_h=180,
         tall=('v3-tour-tall.jpg', 'Rooftop pool and sun deck from above', AMENITIES),
-        pair=('v3-tour-stack.jpg', 'The Leo Tallahassee leasing entrance, and friends taking a gameday selfie', CONTACT),
-        closing='We can&rsquo;t wait to meet you and show you what living lavishly at Leo looks like.',
+        top=('v3-entry-half.jpg', 'The Leo Tallahassee leasing entrance', CONTACT),
+        bottom=('v3-gameday-half.jpg', 'Friends in garnet and gold taking a group selfie', SITE),
+        closing=f'<p style="margin:0 0 20px 0;font-family:{SANS};font-size:17px;line-height:26px;font-weight:300;color:{TEAL};">We can&rsquo;t wait to meet you and show you what living lavishly at Leo looks like.</p>',
         signoff='See you soon,',
     ),
     'v3-still-interested.html': dict(
@@ -250,9 +261,10 @@ EMAILS = {
         action=still_action(),
         after=still_contact(),
         header='header-short.jpg', header_h=180,
-        tall=('v3-still-tall.jpg', 'Two friends with iced coffees outside a coffee shop', SITE),
-        pair=('v3-still-stack.jpg', 'Rooftop pool with a Jumbotron, and a resident smiling poolside', AMENITIES),
-        closing='We&rsquo;re here to help!',
+        tall=('v3-pool-tall.jpg', 'Rooftop pool with a Jumbotron and loungers', AMENITIES),
+        top=('v3-coffee-half.jpg', 'Two friends with iced coffees outside a coffee shop', SITE),
+        bottom=('v3-poolside-half.jpg', 'Smiling by the pool in sunglasses', AMENITIES),
+        closing='',
         signoff='Talk soon,',
     ),
 }

@@ -42,3 +42,13 @@ stack(('A__EXTERIOR_LOBBY_SIGNAGE.jpg', dict(cx=0.5, cy=0.56, zoom=1.25)),
 tall('d82d6a3f-image.jpg', 'v3-still-tall.jpg', cx=0.5, cy=0.56)
 stack(('H__POOL1.jpg', dict(cx=0.5, cy=0.62)),
       ('dc506566-image.jpg', dict(cx=0.5, cy=0.3)), 'v3-still-stack.jpg')
+
+# V4 (all-recs pass): stacked pairs split into separate images so each can link somewhere different
+def half(src, name, **kw):
+    save(leaf(cover(load(src), 498, 308, **kw), 64), name)
+
+tall('H__POOL1.jpg', 'v3-pool-tall.jpg', cx=0.5, cy=0.62)
+half('A__EXTERIOR_LOBBY_SIGNAGE.jpg', 'v3-entry-half.jpg', cx=0.5, cy=0.56, zoom=1.25)
+half('59e5ef8c-image.jpg', 'v3-gameday-half.jpg', cx=0.5, cy=0.42)
+half('d82d6a3f-image.jpg', 'v3-coffee-half.jpg', cx=0.5, cy=0.5, zoom=1.15)
+half('dc506566-image.jpg', 'v3-poolside-half.jpg', cx=0.5, cy=0.3)
