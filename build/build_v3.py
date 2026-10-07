@@ -196,13 +196,8 @@ def build(e):
 
   <!-- L.E.O. BAND -->
   <tr>
-    <td class="px" background="{IMG}pattern-teal.png" bgcolor="#44717c" style="padding:54px 40px 50px 40px;background-color:#44717c;background-image:url('{IMG}pattern-teal.png');background-repeat:repeat;background-position:top left;background-size:100px 100px;">
-      <p class="leo" style="margin:0 0 30px 0;font-family:{SERIF};font-size:58px;line-height:58px;font-weight:400;color:#ffffff;"><span style="color:#f8b5b3;">L</span>iterally<br><span style="color:#f8b5b3;">E</span>veryone&rsquo;s<br><span style="color:#f8b5b3;">O</span>bsessed</p>
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
-        <tr><td style="padding:13px 0;border-top:1px solid #7fa0a8;font-family:{SANS};font-size:16px;line-height:23px;font-weight:400;color:#ffffff;"><a href="{AMENITIES}" target="_blank" style="color:#ffffff;text-decoration:none;">75-foot rooftop pool, hot tub and a Jumbotron</a></td></tr>
-        <tr><td style="padding:13px 0;border-top:1px solid #7fa0a8;font-family:{SANS};font-size:16px;line-height:23px;font-weight:400;color:#ffffff;"><a href="{AMENITIES}" target="_blank" style="color:#ffffff;text-decoration:none;">Indoor pickleball court and a golf simulator</a></td></tr>
-        <tr><td style="padding:13px 0;border-top:1px solid #7fa0a8;border-bottom:1px solid #7fa0a8;font-family:{SANS};font-size:16px;line-height:23px;font-weight:400;color:#ffffff;"><a href="{AMENITIES}" target="_blank" style="color:#ffffff;text-decoration:none;">Cold plunge, infrared sauna and heated yoga</a></td></tr>
-      </table>
+    <td class="px" background="{IMG}pattern-teal.png" bgcolor="#44717c" style="padding:56px 40px 60px 40px;background-color:#44717c;background-image:url('{IMG}pattern-teal.png');background-repeat:repeat;background-position:top left;background-size:100px 100px;">
+      <p class="leo" style="margin:0;font-family:{SERIF};font-size:58px;line-height:58px;font-weight:400;color:#ffffff;"><span style="color:#f8b5b3;">L</span>iterally<br><span style="color:#f8b5b3;">E</span>veryone&rsquo;s<br><span style="color:#f8b5b3;">O</span>bsessed</p>
     </td>
   </tr>
 
