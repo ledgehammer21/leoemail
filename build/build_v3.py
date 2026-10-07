@@ -163,7 +163,7 @@ def build(e):
   <!-- HEADER -->
   <tr>
     <td style="font-size:0;line-height:0;background-color:#e4605a;" bgcolor="#e4605a">
-      <a href="{SITE}" target="_blank" style="text-decoration:none;"><img src="{IMG}header.jpg" width="600" height="276" alt="Leo Tallahassee" style="display:block;width:100%;max-width:600px;height:auto;border:0;outline:none;font-family:Georgia,serif;font-size:40px;line-height:276px;color:#ffffff;text-align:center;"></a>
+      <a href="{SITE}" target="_blank" style="text-decoration:none;"><img src="{IMG}{e.get('header','header.jpg')}" width="600" height="{e.get('header_h',276)}" alt="Leo Tallahassee" style="display:block;width:100%;max-width:600px;height:auto;border:0;outline:none;font-family:Georgia,serif;font-size:40px;line-height:{e.get('header_h',276)}px;color:#ffffff;text-align:center;"></a>
     </td>
   </tr>
 
@@ -248,6 +248,7 @@ EMAILS = {
               'answer any questions about floor plans, availability, or the leasing process!',
         action=still_action(),
         after=still_contact(),
+        header='header-short.jpg', header_h=180,
         tall=('v3-still-tall.jpg', 'Two friends with iced coffees outside a coffee shop', SITE),
         pair=('v3-still-stack.jpg', 'Rooftop pool with a Jumbotron, and a resident smiling poolside', AMENITIES),
         closing='We&rsquo;re here to help!',
