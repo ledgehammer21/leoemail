@@ -11,7 +11,7 @@ AMENITIES = SITE + 'amenities/'
 CONTACT = SITE + 'contact/'
 APPLY = 'https://leotally.prospectportal.com/Apartments/module/application_authentication/'
 TEL = 'tel:+18502205585'
-SMS = 'sms:+18502205585'
+SMS = 'sms:18502205585?&body=LEOTALLY'
 EMAIL = 'info@leotallahassee.com'
 
 PINK, TEAL, CHAR = '#f39391', '#3f6d78', '#3b3735'
