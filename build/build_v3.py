@@ -211,7 +211,7 @@ def build(e):
   <!-- FOOTER -->
   <tr>
     <td class="px" align="center" bgcolor="{CHAR}" style="padding:48px 30px 42px 30px;background-color:{CHAR};">
-      <p style="margin:0 0 26px 0;font-family:{SERIF};font-size:26px;line-height:32px;font-weight:400;color:#ffffff;"><span style="color:#f8b5b3;">L</span>iterally <span style="color:#f8b5b3;">E</span>veryone&rsquo;s <span style="color:#f8b5b3;">O</span>bsessed</p>
+      <p style="margin:0 0 26px 0;font-family:{SERIF};font-size:26px;line-height:32px;font-weight:400;color:#ffffff;"><span style="color:#f8b5b3;">L</span>iterally <span style="color:#f8b5b3;">E</span>verybody&rsquo;s <span style="color:#f8b5b3;">O</span>bsessed</p>
       <p class="nav" style="margin:0 0 24px 0;font-family:{FOOT_SANS};font-size:11px;line-height:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ffffff;">
         <a href="{FLOOR_PLANS}" target="_blank" style="color:#ffffff;text-decoration:underline;padding:0 12px;white-space:nowrap;">Floor Plans</a>
         <a href="{AMENITIES}" target="_blank" style="color:#ffffff;text-decoration:underline;padding:0 12px;white-space:nowrap;">Amenities</a>
@@ -256,7 +256,7 @@ EMAILS = {
         subject='Still Trying to Live Lavishly?',
         preheader='Spots are starting to fill. Let&rsquo;s find the floor plan of your dreams.',
         headline='Still thinking about making Leo your home next year?',
-        intro='We&rsquo;d love to chat and help you see why Literally Everyone&rsquo;s Obsessed with Leo. We&rsquo;re happy to '
+        intro='We&rsquo;d love to chat and help you see why Literally Everybody&rsquo;s Obsessed with Leo. We&rsquo;re happy to '
               'answer any questions about floor plans, availability, or the leasing process!',
         action=still_action(),
         after=still_contact(),

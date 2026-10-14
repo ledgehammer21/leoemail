@@ -144,7 +144,7 @@ def build(e):
   <!-- FOOTER -->
   <tr>
     <td class="px" align="center" bgcolor="{CHAR}" style="padding:52px 30px 44px 30px;background-color:{CHAR};">
-      <p style="margin:0 0 28px 0;font-family:{FOOT_SERIF};font-size:22px;line-height:30px;font-weight:400;color:#ffffff;">Literally Everyone&rsquo;s Obsessed</p>
+      <p style="margin:0 0 28px 0;font-family:{FOOT_SERIF};font-size:22px;line-height:30px;font-weight:400;color:#ffffff;">Literally Everybody&rsquo;s Obsessed</p>
       <p class="nav" style="margin:0 0 26px 0;font-family:{FOOT_SANS};font-size:11px;line-height:18px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#ffffff;">
         <a href="{FLOOR_PLANS}" target="_blank" style="color:#ffffff;text-decoration:underline;padding:0 12px;white-space:nowrap;">Floor Plans</a>
         <a href="{AMENITIES}" target="_blank" style="color:#ffffff;text-decoration:underline;padding:0 12px;white-space:nowrap;">Amenities</a>
@@ -189,7 +189,7 @@ EMAILS = {
         subject='Still Trying to Live Lavishly?',
         preheader='Spots are starting to fill. Let&rsquo;s find the floor plan of your dreams.',
         headline='Still thinking about making Leo your home next year?',
-        intro=['We&rsquo;d love to chat and help you see why Literally Everyone&rsquo;s Obsessed with Leo. '
+        intro=['We&rsquo;d love to chat and help you see why Literally Everybody&rsquo;s Obsessed with Leo. '
                'We&rsquo;re happy to answer any questions about floor plans, availability, or the leasing process!'],
         photos_top=(POOL, LIV, PICK),
         teal='Spots are starting to fill, and it would make us (and you, we&rsquo;re sure) super sad if you '
