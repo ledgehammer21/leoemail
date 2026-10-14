@@ -249,7 +249,7 @@ EMAILS = {
         tall=('v3-tour-tall.jpg', 'Rooftop pool and sun deck from above', AMENITIES),
         top=('v3-entry-half.jpg', 'The Leo Tallahassee leasing entrance', CONTACT),
         bottom=('v3-gameday-half.jpg', 'Friends in garnet and gold taking a group selfie', SITE),
-        closing=f'<p style="margin:0 0 20px 0;font-family:{SANS};font-size:17px;line-height:26px;font-weight:300;color:{TEAL};">We can&rsquo;t wait to meet you and show you what living lavishly at Leo looks like.</p>',
+        closing=f'<p style="margin:0 0 20px 0;font-family:{SANS};font-size:17px;line-height:26px;font-weight:300;color:{TEAL};">We can&rsquo;t wait to meet you and show you what everybody&rsquo;s obsessed with.</p>',
         signoff='See you soon,',
     ),
     'v3-still-interested.html': dict(

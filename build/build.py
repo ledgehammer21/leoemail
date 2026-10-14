@@ -210,7 +210,7 @@ EMAILS = {
              'just text us at <a href="' + SMS + '" style="color:#ffffff;text-decoration:none;white-space:nowrap;">(850) 220-5585</a> '
              'and we&rsquo;ll find a time that does.',
         photos_bottom=(F1, F2, F3),
-        pink='We can&rsquo;t wait to meet you and show you what living lavishly at Leo looks like.',
+        pink='We can&rsquo;t wait to meet you and show you what everybody&rsquo;s obsessed with.',
         closing='We&rsquo;re here to help!',
         signoff='Talk soon,',
     ),
