@@ -195,8 +195,7 @@ EMAILS = {
         teal='Spots are starting to fill, and it would make us (and you, we&rsquo;re sure) super sad if you '
              'missed out on the floor plan of your dreams.',
         photos_bottom=(G1, G2, G3),
-        pink='Give us a call or send us a message...we&rsquo;re around every day from 10-5. Heck, you can even '
-             'reply to this email with a simple &ldquo;tell me more.&rdquo;',
+        pink='Give us a call or send us a message. We&rsquo;re around every day from 10-5.',
         closing='We&rsquo;re here to help!',
         signoff='Talk soon,',
     ),
