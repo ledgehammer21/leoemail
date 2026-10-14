@@ -186,7 +186,7 @@ G3 = ('poolside.jpg', 'Smiling by the pool in sunglasses', AMENITIES)
 
 EMAILS = {
     'still-interested.html': dict(
-        subject='Still Trying to Live Lavishly?',
+        subject='Still Trying to See Why Everybody&rsquo;s Obsessed?',
         preheader='Spots are starting to fill. Let&rsquo;s find the floor plan of your dreams.',
         headline='Still thinking about making Leo your home next year?',
         intro=['We&rsquo;d love to chat and help you see why Literally Everybody&rsquo;s Obsessed with Leo. '

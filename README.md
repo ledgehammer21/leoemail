@@ -4,7 +4,7 @@ HTML email examples for Leo Tallahassee, built for Entrata.
 
 | Email | File | Subject line |
 | --- | --- | --- |
-| Still Interested? | `still-interested.html` | Still Trying to Live Lavishly? |
+| Still Interested? | `still-interested.html` | Still Trying to See Why Everybody's Obsessed? |
 | See You Tomorrow? | `see-you-tomorrow.html` | Link Up at Leo? |
 
 ## Before loading into Entrata
