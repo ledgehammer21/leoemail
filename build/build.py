@@ -1,5 +1,5 @@
 """Builds the Leo Tallahassee lead-nurture emails from one shared template."""
-import sys, os, html
+import sys, os, re, html
 
 OUT = sys.argv[1]
 IMG = 'https://raw.githubusercontent.com/ledgehammer21/leoemail/main/images/'
@@ -22,9 +22,9 @@ FOOT_SANS = "'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif"
 
 def photo_block(big, left, right, pad_top, pad_bottom):
     def img(p, w, h):
-        return (f'<a href="{p[2]}" target="_blank" style="text-decoration:none;">'
+        return (f'<a href="{p[2]}" target="_blank" style="text-decoration:none;color:#6b6562;">'
                 f'<img src="{IMG}{p[0]}" width="{w}" height="{h}" alt="{html.escape(p[1])}" '
-                f'style="display:block;width:100%;max-width:{w}px;height:auto;border:0;outline:none;"></a>')
+                f'style="display:block;width:100%;max-width:{w}px;height:auto;border:0;outline:none;font-family:Arial,sans-serif;font-size:13px;line-height:18px;color:#6b6562;"></a>')
     return f'''
   <!-- PHOTOS -->
   <tr>
@@ -61,7 +61,7 @@ def build(e):
 <!-- Subject line: {e['subject']} -->
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
-<style>td,th,div,p,a,h1,h2,h3 {{font-family: Georgia, Arial, sans-serif;}}</style>
+<style>td,th,div,p,a,span,h1,h2,h3 {{font-family: Arial, sans-serif !important;}} .serif {{font-family: Georgia, 'Times New Roman', serif !important;}}</style>
 <![endif]-->
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
 <style>
@@ -171,6 +171,19 @@ def build(e):
 '''
 
 
+def outlook_serif(doc):
+    """Tag every element set in the display serif with class="serif", so desktop Outlook
+    falls back to Georgia for headings and Arial for everything else."""
+    def fix(m):
+        tag = m.group(0)
+        if 'Playfair Display' not in tag:
+            return tag
+        if 'class="' in tag:
+            return tag.replace('class="', 'class="serif ', 1)
+        return re.sub(r'^<(\w+)', r'<\1 class="serif"', tag)
+    return re.sub(r'<(?!link)\w+[^>]*>', fix, doc)
+
+
 EXT = ('exterior-entry.jpg', 'The Leo Tallahassee leasing entrance', CONTACT)
 KIT = ('kitchen.jpg', 'Apartment kitchen with island seating', FLOOR_PLANS)
 POOLA = ('pool-aerial.jpg', 'Rooftop pool and sun deck from above', AMENITIES)
@@ -217,5 +230,5 @@ EMAILS = {
 
 for name, e in EMAILS.items():
     with open(os.path.join(OUT, name), 'w') as f:
-        f.write(build(e))
+        f.write(outlook_serif(build(e)))
     print('wrote', name)

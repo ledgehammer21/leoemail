@@ -1,5 +1,5 @@
 """V3: an alternate, action-first design for the Leo Tallahassee lead-nurture emails."""
-import sys, os
+import sys, os, re
 from urllib.parse import quote
 
 OUT = sys.argv[1]
@@ -136,7 +136,7 @@ def build(e):
 <!-- Subject line: {e['subject']} -->
 <!--[if mso]>
 <noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
-<style>td,th,div,p,a,h1,h2,h3,span {{font-family: Georgia, Arial, sans-serif;}}</style>
+<style>td,th,div,p,a,span,h1,h2,h3 {{font-family: Arial, sans-serif !important;}} .serif {{font-family: Georgia, 'Times New Roman', serif !important;}}</style>
 <![endif]-->
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
 <style>
@@ -188,12 +188,12 @@ def build(e):
     <td class="px" style="padding:0 40px 0 40px;background-color:#ffffff;" bgcolor="#ffffff">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
         <tr>
-          <td width="47.9%" valign="top" style="font-size:0;line-height:0;"><a href="{e['tall'][2]}" target="_blank"><img src="{IMG}{e['tall'][0]}" width="249" height="330" alt="{e['tall'][1]}" style="display:block;width:100%;max-width:249px;height:auto;border:0;"></a></td>
+          <td width="47.9%" valign="top" style="font-size:0;line-height:0;"><a href="{e['tall'][2]}" target="_blank" style="text-decoration:none;color:#6b6562;"><img src="{IMG}{e['tall'][0]}" width="249" height="330" alt="{e['tall'][1]}" style="display:block;width:100%;max-width:249px;height:auto;border:0;outline:none;font-family:Arial,sans-serif;font-size:13px;line-height:18px;color:#6b6562;"></a></td>
           <td width="4.2%" style="font-size:0;line-height:0;">&nbsp;</td>
           <td width="47.9%" valign="top" style="font-size:0;line-height:0;">
-            <a href="{e['top'][2]}" target="_blank"><img src="{IMG}{e['top'][0]}" width="249" height="154" alt="{e['top'][1]}" style="display:block;width:100%;max-width:249px;height:auto;border:0;"></a>
+            <a href="{e['top'][2]}" target="_blank" style="text-decoration:none;color:#6b6562;"><img src="{IMG}{e['top'][0]}" width="249" height="154" alt="{e['top'][1]}" style="display:block;width:100%;max-width:249px;height:auto;border:0;outline:none;font-family:Arial,sans-serif;font-size:13px;line-height:18px;color:#6b6562;"></a>
             <div style="height:22px;line-height:22px;font-size:0;">&nbsp;</div>
-            <a href="{e['bottom'][2]}" target="_blank"><img src="{IMG}{e['bottom'][0]}" width="249" height="154" alt="{e['bottom'][1]}" style="display:block;width:100%;max-width:249px;height:auto;border:0;"></a>
+            <a href="{e['bottom'][2]}" target="_blank" style="text-decoration:none;color:#6b6562;"><img src="{IMG}{e['bottom'][0]}" width="249" height="154" alt="{e['bottom'][1]}" style="display:block;width:100%;max-width:249px;height:auto;border:0;outline:none;font-family:Arial,sans-serif;font-size:13px;line-height:18px;color:#6b6562;"></a>
           </td>
         </tr>
       </table>
@@ -238,6 +238,19 @@ def build(e):
 '''
 
 
+def outlook_serif(doc):
+    """Tag every element set in the display serif with class="serif", so desktop Outlook
+    falls back to Georgia for headings and Arial for everything else."""
+    def fix(m):
+        tag = m.group(0)
+        if 'Playfair Display' not in tag:
+            return tag
+        if 'class="' in tag:
+            return tag.replace('class="', 'class="serif ', 1)
+        return re.sub(r'^<(\w+)', r'<\1 class="serif"', tag)
+    return re.sub(r'<(?!link)\w+[^>]*>', fix, doc)
+
+
 EMAILS = {
     'v3-see-you-tomorrow.html': dict(
         subject='Link Up at Leo?',
@@ -271,5 +284,5 @@ EMAILS = {
 
 for name, e in EMAILS.items():
     with open(os.path.join(OUT, name), 'w') as f:
-        f.write(build(e))
+        f.write(outlook_serif(build(e)))
     print('wrote', name)
